@@ -1,2 +1,4 @@
-wordpress/
+nginx/logs/
+
+wordpress/apps/
 wordpress-db/
