@@ -21,12 +21,14 @@ services:
       - 8080:80
     volumes:
       - ./wordpress/apps:/var/www/html
+      - ./wordpress/composer.json:/var/www/html/composer.json
       - ./wordpress/plugins:/var/www/html/wp-content/plugins
     environment:
       WORDPRESS_DB_HOST: mysql
       WORDPRESS_DB_USER: exampleuser
       WORDPRESS_DB_PASSWORD: examplepass
       WORDPRESS_DB_NAME: exampledb
+    command: /bin/bash -c "composer install && php-fpm"
     depends_on:
       - mysql
 
