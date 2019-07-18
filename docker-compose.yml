@@ -13,7 +13,9 @@ services:
       - wordpress
 
   wordpress:
-    image: wordpress:php7.3-fpm
+    build:
+      dockerfile: Dockerfile
+      context: ./wordpress/
     container_name: wordpress
     ports:
       - 8080:80
