@@ -1,0 +1,21 @@
+#!/bin/bash
+
+help() {
+  echo ""
+  echo "Usage: ./dev COMMAND"
+  echo ""
+  echo "Shortcuts for lazy people like you!"
+  echo ""
+  echo "Commands:"
+  echo "  test                      Run all unit tests"
+}
+
+if [ $# -gt 0 ]; then
+  if [ "$1" == "test" ]; then
+    docker exec wordpress bash -c "./vendor/bin/phpunit --bootstrap vendor/autoload.php ./wp-content/plugins"
+  else
+    docker-compose "$@"
+  fi
+else
+  help
+fi
