@@ -28,7 +28,6 @@ services:
       WORDPRESS_DB_USER: exampleuser
       WORDPRESS_DB_PASSWORD: examplepass
       WORDPRESS_DB_NAME: exampledb
-    command: /bin/bash -c "composer install && php-fpm"
     depends_on:
       - mysql
 
