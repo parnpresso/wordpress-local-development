@@ -42,3 +42,13 @@ services:
       MYSQL_USER: exampleuser
       MYSQL_PASSWORD: examplepass
       MYSQL_RANDOM_ROOT_PASSWORD: '1'
+
+  wordpress-cli:
+    image: wordpress:cli
+    container_name: wordpress-cli
+    volumes:
+      - ./wordpress/apps:/var/www/html
+    depends_on:
+      - wordpress
+      - mysql
+    tty: true
