@@ -1,4 +1,4 @@
-# wordpress-local-development
+# WordPress for local development
 Simple local development for WordPress. Stack in this project
 - NGINX
 - PHP-FPM 7.3
