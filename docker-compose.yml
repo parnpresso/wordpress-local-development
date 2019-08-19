@@ -9,6 +9,8 @@ services:
       - ./nginx/conf:/etc/nginx/conf.d
       - ./nginx/logs:/var/log/nginx
       - ./wordpress/apps:/var/www/html
+      - ./wordpress/plugins:/var/www/html/wp-content/plugins
+      - ./wordpress/themes:/var/www/html/wp-content/themes
     depends_on:
       - wordpress
 
